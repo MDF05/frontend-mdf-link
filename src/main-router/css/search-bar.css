@@ -1,0 +1,24 @@
+.searchTerm {
+    width: 100%;
+    border: 3px solid #14532D;
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.searchTerm:focus {
+    color: #14532D;
+}
+
+.searchButton {
+    border: 1px solid #14532D;
+    background: #14532D;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+/*Resize the wrap to see the search bar change!*/
