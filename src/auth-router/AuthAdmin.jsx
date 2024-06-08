@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { alertItem } from "../main-router/service_javascript/alertItem"
+import { Link } from "react-router-dom"
 
 function AdminLogin() {
     const [username, setUserName] = useState("")
@@ -22,9 +23,9 @@ function AdminLogin() {
         })
             .then((response) => response.json())
             .then((response) => {
-                console.log(response)
+                const aPageAdmin = document.querySelector("a.page-admin")
                 const succes = response.succes
-                if (succes) window.location = "/page-admin"
+                if (succes) aPageAdmin.click()
                 else {
                     alertItem(response.message, "bg-red-500")
                 }
@@ -67,6 +68,9 @@ function AdminLogin() {
                         style={{ bottom: "-9px" }}></meter>
                 </div>
             </div>
+            <Link to="/page-admin" className="page-admin hidden" aria-disabled>
+                admin page
+            </Link>
         </div>
     )
 }
