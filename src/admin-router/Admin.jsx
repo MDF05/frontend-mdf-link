@@ -37,11 +37,16 @@ function deleteContent(index) {
     const formContent = document.querySelector(`.table-content-${index}`)
     const idContent = formContent.querySelector(".properti-content").textContent
 
-    fetch(import.meta.env.VITE_delete_content + `/${idContent}`, { method: "DELETE" })
-        .then((e) => e.json())
-        .then((e) => {
-            if (e.succes) window.location.reload()
-        })
+    const confirmDelete = confirm("element beserta data nya akan di hapus")
+    if (confirmDelete) {
+        fetch(import.meta.env.VITE_delete_content + `/${idContent}`, { method: "DELETE" })
+            .then((e) => e.json())
+            .then((e) => {
+                if (e.succes) window.location.reload()
+            })
+    } else {
+        return null
+    }
 }
 
 function Admin() {
