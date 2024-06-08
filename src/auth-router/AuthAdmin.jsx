@@ -52,7 +52,9 @@ function AdminLogin() {
                     onChange={(el) => setPassword(el.target.value)}
                     className="border border-black"
                 />
-                <button type="submit">login</button>
+                <button type="submit" className="bg-blue-400 border border-black">
+                    login
+                </button>
             </form>
             <div className="alert-component hidden">
                 <div className="flex items-center fixed top-5 lg:right-5 right-2 button-74 rounded-none pb-1 pr-12 overflow-hidden scale:90 w-10/12 sm:w-6/12 md:w-max container-alert">
