@@ -77,7 +77,7 @@ export default function CreateContents() {
                     <button type="reset" className="bg-orange-500 rounded-md shadow-md px-2 ">
                         cancel
                     </button>
-                    <Link to="/admin-dava" className="rounded-md shadow-lg px-2 bg-yellow-500">
+                    <Link to="/page-admin" className="rounded-md shadow-lg px-2 bg-yellow-500">
                         back
                     </Link>
                 </div>

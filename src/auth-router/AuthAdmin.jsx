@@ -13,7 +13,7 @@ function AdminLogin() {
             password,
         }
 
-        fetch(import.meta.env.VITE_admin_login, {
+        fetch("http://localhost:3000/my-auth", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -22,8 +22,9 @@ function AdminLogin() {
         })
             .then((response) => response.json())
             .then((response) => {
-                const username = response.username
-                if (username) window.location = "/admin-dava"
+                console.log(response)
+                const succes = response.succes
+                if (succes) window.location = "/page-admin"
                 else {
                     alertItem(response.message, "bg-red-500")
                 }

@@ -7,6 +7,7 @@ import AdminLogin from "./auth-router/AuthAdmin.jsx"
 import Admin from "./admin-router/Admin.jsx"
 
 import "./main-router/css/index.css"
+import CreateContents from "./admin-router/CreateContent.jsx"
 const router = createBrowserRouter([
     {
         path: "/",
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
     {
         path: "/page-admin",
         element: <Admin></Admin>,
+    },
+    {
+        path: "/page-admin/create-content",
+        element: <CreateContents></CreateContents>,
     },
 ])
 

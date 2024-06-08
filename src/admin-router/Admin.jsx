@@ -39,7 +39,9 @@ function deleteContent(index) {
 
     fetch(import.meta.env.VITE_delete_content + `/${idContent}`, { method: "DELETE" })
         .then((e) => e.json())
-        .then((e) => console.log(e))
+        .then((e) => {
+            if (e.succes) window.location.reload()
+        })
 }
 
 function Admin() {
@@ -50,7 +52,7 @@ function Admin() {
     let viewElement
     let allProperty
     if (element) {
-        viewElement = element.map((data, i) => {
+        viewElement = element?.myContent?.map((data, i) => {
             allProperty = Object.getOwnPropertyNames(data)
             return (
                 <div
@@ -102,7 +104,7 @@ function Admin() {
     return (
         <div>
             <div className="flex justify-center my-12">
-                <Link className="button-74 bg-blue-400" to="/admin-dava/create-content">
+                <Link className="button-74 bg-blue-400" to="/page-admin/create-content">
                     new content
                 </Link>
             </div>
