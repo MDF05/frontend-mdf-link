@@ -33,20 +33,22 @@ function AdminLogin() {
     }
 
     return (
-        <div className="flex w-full h-screen justify-center items-center">
+        <div className="flex w-full h-screen justify-center items-center p-1 md:p-0 bg-blue-500">
             <form onSubmit={hadleSubmitAdmin} className="flex flex-col w-96 gap-5 form-login-admin">
                 <input
                     type="text"
                     placeholder="username"
                     name="username"
                     value={username}
+                    required
                     onChange={(el) => setUserName(el.target.value)}
                     className="border border-black"
                 />
                 <input
-                    type="text"
+                    type="password"
                     placeholder="password"
                     name="password"
+                    required
                     onChange={(el) => setPassword(el.target.value)}
                     className="border border-black"
                 />
