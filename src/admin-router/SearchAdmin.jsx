@@ -22,7 +22,10 @@ function inputSearchAdmin(elemen) {
 
 function SearchAdmin() {
     return (
-        <div className="flex justify-center mb-5">
+        <div className="flex  mb-5">
+            <label htmlFor="search-admin" className="p-2 text-end text-2xl">
+                cari
+            </label>
             <input
                 type="search"
                 id="search-admin"
