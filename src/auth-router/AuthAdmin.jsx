@@ -33,7 +33,7 @@ function AdminLogin() {
     }
 
     return (
-        <div className="flex w-full h-screen justify-center items-center p-1 md:p-0 bg-blue-500">
+        <div className="flex w-full h-screen justify-center items-center p-1 md:p-0">
             <form onSubmit={hadleSubmitAdmin} className="flex flex-col w-96 gap-5 form-login-admin">
                 <input
                     type="text"
