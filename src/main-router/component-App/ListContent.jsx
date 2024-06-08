@@ -61,13 +61,17 @@ function ElementLogoLink({ content, classStyle }) {
 
 function AllContent({ inputSearch }) {
     const [dataApi, setDataApi] = useState(null)
+    const [counterContent, setCounterContent] = useState(0)
     useEffect(() => dataContent(setDataApi), [])
+    useEffect(() => {
+        setCounterContent(dataApi?.myContent?.length || 0)
+    }, [dataApi])
 
     let dataClass = "bg-slate-800 order-2"
     let data
+
     if (dataApi) {
-        console.log(dataApi)
-        data = dataApi.myContent.map((content, i) => {
+        data = dataApi?.myContent?.map((content, i) => {
             let contentDate = content["tanggal-upload"]
             if (inputSearch.length !== 0) {
                 if (contentDate.toLowerCase().trimEnd().match(inputSearch)) {
@@ -109,7 +113,12 @@ function AllContent({ inputSearch }) {
         })
     }
 
-    return <div className="flex justify-center flex-wrap">{data}</div>
+    return (
+        <div className="">
+            <div className="flex justify-center flex-wrap w-full">{data}</div>
+            <div className="text-center mt-10 text-xl">⪼ total content {counterContent} ⪻</div>
+        </div>
+    )
 }
 
 export { AllContent }

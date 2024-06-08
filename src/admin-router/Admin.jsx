@@ -63,6 +63,11 @@ function Admin() {
                 <div
                     className={`w-full mb-32 border border-black table-content-${i} search-table order-2`}
                     key={i}>
+                    <div className=" w-full text-center">
+                        <span className="text-2xl text-blue-500 capitalize border-b border-blue-500">{`content ke ${
+                            i + 1
+                        }`}</span>
+                    </div>
                     {allProperty.map((properti, index) => {
                         return (
                             <div key={index} className="w-full flex text-wrap text-left my-5">
